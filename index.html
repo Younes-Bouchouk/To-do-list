@@ -2,23 +2,58 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap"
+    rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
-    <title>To Do List</title>
+
+    <title>To do List</title>
 </head>
 <body>
-    
-    <div class="todolist">
-        <h1>To Do List</h1>
-        <div id="add">
-            <input id="inputTask" type="text">
-            <button onclick="addTask()">+</button>
+    <div id="app">
+        
+        <div id="title">
+            <img id="logo" src="img/logo.png" alt="">
         </div>
-        <hr>
-        <div id="list"></div>
-    </div>
 
-    <script src="app.js"></script>
+        <div id="add">
+            
+                <div id="dropdown" onmouseover="changeClass()" onmouseout="changeClass()">
+                    <button>
+                        <p>Noir</p> 
+                        <img id="triangle" src="img/triangle-close.png"></button> <!-- ▼ ▽ ▾ ▿ ▴ ▵ ▲ △ -->
+                    <ul id="colors">
+                        <li id="black">Noir</li>
+                        <li id="blue">Bleu</li>
+                        <li id="purple">Violet</li>
+                        <li id="pink">Rose</li>
+                    </ul>
+                </div>
+
+                <input id="input" type="text" placeholder="Entrez une tâche à réaliser">
+
+                <button id="btn-add" onclick="addTask()">+</button>
+        
+        </div>
+        
+
+        <div id="error">
+            <p>* Écrivez une tâche à accomplir</p>
+        </div>
+
+        <div id="list">
+            
+      <!--      <div>
+                <img src="img/unchecked.png" >
+                <p>Tâche 2</p>
+                <p>x</p>
+            </div> -->
+
+        </div> 
+    </div> 
+    
+    <script src="src/task.js"></script>
+    <script src="src/color.js"></script>
 </body>
 </html>
